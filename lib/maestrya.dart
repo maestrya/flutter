@@ -10,7 +10,7 @@ class Maestrya {
       if (item['type'] == 'text') {
         childrenWidgets.add(TextWidget(params: value));
       } else if (item['type'] == 'input') {
-        childrenWidgets.add(InputWidgetState(params: value));
+        childrenWidgets.add(InputWidget(params: value));
       } else if (item['type'] == 'select') {
         childrenWidgets.add(DropdownButtonWidget(params: value));
       }
@@ -38,10 +38,10 @@ class GenericStringDynamicInferface {
 }
 
 
-class InputWidgetState extends StatelessWidget {
+class InputWidget extends StatelessWidget {
   final GenericStringDynamicInferface params;
 
-  InputWidgetState({Key key, @required this.params}) : super(key: key);
+  InputWidget({Key key, @required this.params}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

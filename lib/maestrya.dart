@@ -41,7 +41,6 @@ class GenericStringDynamicInferface {
 class InputWidgetState extends StatelessWidget {
   final GenericStringDynamicInferface params;
 
-  // In the constructor, require a Person
   InputWidgetState({Key key, @required this.params}) : super(key: key);
 
   @override
@@ -82,7 +81,6 @@ class DropdownButtonWidgetState extends State<DropdownButtonWidget> {
   String dropdownValue = 'One';
   final GenericStringDynamicInferface params;
 
-  // In the constructor, require a Person
   DropdownButtonWidgetState({Key key, @required this.params});
 
   @override

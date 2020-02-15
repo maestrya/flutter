@@ -5,7 +5,7 @@ import 'package:maestrya/maestrya.dart';
 import './data.dart';
 
 void main() {
-  test('adds one to input values', () {
+  test('success render TextWidget', () {
     dynamic params = data['success']['body']['render'];
     
     final value = GenericStringDynamicInferface(params[0]);

@@ -13,6 +13,8 @@ class Maestrya {
         childrenWidgets.add(InputWidget(params: value));
       } else if (item['type'] == 'select') {
         childrenWidgets.add(DropdownButtonWidget(params: value));
+      } else if (item['type'] == 'cards') {
+        childrenWidgets.add(CardWidget(params: value));
       }
     }
     return childrenWidgets;
@@ -36,7 +38,6 @@ class GenericStringDynamicInferface {
 
   GenericStringDynamicInferface(this.data);
 }
-
 
 class InputWidget extends StatelessWidget {
   final GenericStringDynamicInferface params;
@@ -65,7 +66,6 @@ class InputWidget extends StatelessWidget {
     );
   }
 }
-
 
 class DropdownButtonWidget extends StatefulWidget {
   final GenericStringDynamicInferface params;
@@ -108,5 +108,43 @@ class DropdownButtonWidgetState extends State<DropdownButtonWidget> {
         );
       }).toList(),
     );
+  }
+}
+
+class CardWidget extends StatelessWidget {
+  final GenericStringDynamicInferface params;
+
+  // In the constructor, require a Person
+  CardWidget({Key key, @required this.params}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final paramsStyle = this.params.data['value'];
+
+    final styles = {
+      "scrollDirection": (paramsStyle['type'] == "horizontal")
+          ? Axis.horizontal
+          : Axis.vertical,
+      "groupHeight": paramsStyle['style']['groupHeight'].toDouble(),
+      "cardwidth": paramsStyle['style']['groupHeight'].toDouble(),
+    };
+
+    return Container(
+        height: styles['groupHeight'],
+        child: ListView.builder(
+          scrollDirection: styles['scrollDirection'],
+          itemCount: paramsStyle['cards'].length,
+          itemBuilder: (BuildContext context, int i) => Card(
+            child: Container(
+              width: styles['cardwidth'],
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Text(paramsStyle['cards'][i]['text']),
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }

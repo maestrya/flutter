@@ -32,4 +32,18 @@ void main() {
 
     expect(result, result);
   });
+
+    test('success render DropdownButtonWidget', () {
+    dynamic params = data['success']['body']['render'];
+
+    final value = GenericStringDynamicInferface(params[3]);
+
+    List<Widget> childrenWidgets = [];
+    childrenWidgets.add(DropdownButtonWidget(params: value));
+
+    final instance = Maestrya();
+    List<Widget> result = instance.handleWidgets([params[3]]);
+
+    expect(result, result);
+  });
 }

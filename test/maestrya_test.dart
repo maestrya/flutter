@@ -19,7 +19,7 @@ void main() {
     expect(result, result);
   });
 
-  test('success render InputWidgetState', () {
+  test('success render InputWidget', () {
     dynamic params = data['success']['body']['render'];
 
     final value = GenericStringDynamicInferface(params[1]);

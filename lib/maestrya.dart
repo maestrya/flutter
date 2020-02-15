@@ -9,7 +9,9 @@ class Maestrya {
       final value = new GenericStringDynamicInferface(item);
       if (item['type'] == 'text') {
         childrenWidgets.add(TextWidget(params: value));
-      } 
+      } else if (item['type'] == 'input') {
+        childrenWidgets.add(InputWidgetState(params: value));
+      }
     }
     return childrenWidgets;
   }
@@ -32,3 +34,34 @@ class GenericStringDynamicInferface {
 
   GenericStringDynamicInferface(this.data);
 }
+
+
+class InputWidgetState extends StatelessWidget {
+  final GenericStringDynamicInferface params;
+
+  // In the constructor, require a Person
+  InputWidgetState({Key key, @required this.params}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: params.data['value']['name'],
+              fillColor: Colors.white,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25.0),
+                borderSide: BorderSide(),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+

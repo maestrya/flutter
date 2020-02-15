@@ -34,6 +34,17 @@ const data = {
           }
         },
         {
+          "type": "cards",
+          "value": {
+            "style": {"groupHeight": 200.0, "cardwidth": 200.0},
+            "type": "horizontal",
+            "cards": [
+              {"text": "Lorem Ipsum", "link": "LoremIpsum"},
+              {"text": "Ipsum Lorem", "link": "LoremIpsum"}
+            ]
+          }
+        },
+        {
           "type": "select",
           "value": {
             "name": "page_test_input_select",

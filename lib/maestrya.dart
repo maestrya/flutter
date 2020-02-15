@@ -3,7 +3,7 @@ library maestrya;
 import 'package:flutter/material.dart';
 
 class Maestrya {
-  List<Widget> handleWidgets(list) {
+  List<Widget> render(list) {
     List<Widget> childrenWidgets = [];
     for (final item in list) {
       final value = GenericStringDynamicInferface(item);

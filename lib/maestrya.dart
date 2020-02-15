@@ -6,7 +6,7 @@ class Maestrya {
   List<Widget> handleWidgets(list) {
     List<Widget> childrenWidgets = [];
     for (final item in list) {
-      final value = new GenericStringDynamicInferface(item);
+      final value = GenericStringDynamicInferface(item);
       if (item['type'] == 'text') {
         childrenWidgets.add(TextWidget(params: value));
       } else if (item['type'] == 'input') {

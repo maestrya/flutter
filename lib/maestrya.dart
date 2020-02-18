@@ -7,18 +7,16 @@ class Maestrya {
   render(list) {
     return {
       'body': this.renderBody(list['data']['body']['render']),
-      //'header': this.renderHeader(list['data']['header']),
+      'header': this.renderHeader(list['data']['header']),
     };
   }
 
   renderHeader(dynamic header) {
-          print(header);
-
     return header['show']
         ? AppBar(
             title: Text(header['title']['text']),
           )
-        : AppBar();
+        : null;
   }
 
   List<Widget> renderBody(list) {

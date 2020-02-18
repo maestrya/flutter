@@ -4,7 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:maestrya/shared/widgets/index.dart';
 
 class Maestrya {
-  List<Widget> render(list) {
+  render(list) {
+    return {
+      'body': this.renderBody(list['data']['body']['render']),
+      //'header': this.renderHeader(list['data']['header']),
+    };
+  }
+
+  renderHeader(dynamic header) {
+          print(header);
+
+    return header['show']
+        ? AppBar(
+            title: Text(header['title']['text']),
+          )
+        : AppBar();
+  }
+
+  List<Widget> renderBody(list) {
     List<Widget> childrenWidgets = [];
     for (final item in list) {
       if (item['type'] == 'text') {

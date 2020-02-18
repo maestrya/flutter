@@ -1,6 +1,7 @@
 library maestrya;
 
 import 'package:flutter/material.dart';
+import 'package:maestrya/shared/resources/index.dart';
 import 'package:maestrya/shared/widgets/index.dart';
 
 class Maestrya {
@@ -14,6 +15,7 @@ class Maestrya {
   renderHeader(dynamic header) {
     return header['show']
         ? AppBar(
+            backgroundColor: HexColor(header['color']),
             title: Text(header['title']['text']),
           )
         : null;

@@ -2,6 +2,7 @@ name: maestrya
 description: A Flutter package to automate the creation of Widgets with Material using JSON/Objects.
 version: 0.0.1
 homepage: https://maestrya.github.io/
+repository: https://github.com/maestrya/flutter
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

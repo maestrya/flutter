@@ -14,7 +14,7 @@ void main() {
     childrenWidgets.add(TextWidget(params: value));
 
     final instance = Maestrya();
-    List<Widget> result = instance.handleWidgets([params[0]]);
+    List<Widget> result = instance.render([params[0]]);
 
     expect(result, result);
   });
@@ -28,7 +28,7 @@ void main() {
     childrenWidgets.add(InputWidget(params: value));
 
     final instance = Maestrya();
-    List<Widget> result = instance.handleWidgets([params[0]]);
+    List<Widget> result = instance.render([params[0]]);
 
     expect(result, result);
   });
@@ -42,7 +42,7 @@ void main() {
     childrenWidgets.add(DropdownButtonWidget(params: value));
 
     final instance = Maestrya();
-    List<Widget> result = instance.handleWidgets([params[3]]);
+    List<Widget> result = instance.render([params[3]]);
 
     expect(result, result);
   });
@@ -56,7 +56,7 @@ void main() {
     childrenWidgets.add(CardWidget(params: value));
 
     final instance = Maestrya();
-    List<Widget> result = instance.handleWidgets([params[4]]);
+    List<Widget> result = instance.render([params[4]]);
 
     expect(result, result);
   });

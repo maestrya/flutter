@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dynamic_widget: ^1.0.6
 
 dev_dependencies:
   flutter_test:
